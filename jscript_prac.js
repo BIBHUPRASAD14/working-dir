@@ -1,16 +1,16 @@
-// age detection for driving a car
-// using if, else and else if
-
 const prompt = require("prompt-sync")({ sigint : true })
-let age = prompt("What is your age?: ")
-age = Number.parseInt(age)
+age = Number.parseInt(prompt("what's your age?: "))     
+if (age < 18){
+    console.log("you cannot drive")
+}
 
-if (age <= 0){
-    console.log("Invalid age!!-")
-}
-else if (age > 1 && age < 18 ){
-    console.log("You should not drive a car, you are underage!!")
-}
+// in special cases switch can be used
 else{
-    console.log("You should drive a car!!")
+    switch (age){
+        case 18:
+            console.log("your age is undecidable!!")
+            break
+        default:
+            console.log("You can drive!!")
+    }   
 }
