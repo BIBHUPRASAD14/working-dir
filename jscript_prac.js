@@ -1,14 +1,16 @@
-// backtiks are used to insert variables along with string
+// js promise function
 
-let name = "bibhuprasad"
+let p = new Promise ((resolve, reject) => {
+    let a = 2 + 1
+    if (a == 3){
+        resolve("Yes")
+    }else {
+        reject("no")
+    }
+})
 
-console.log(`My name is ${name}`)
-
-// backslash used in js to show special characters
-
-//  \n = new line
-//  \t = new tab
-//  \r = carraige return 
-
-console.log(" hello. \n new line. \t tab. \r carraige return")
-
+p.then((message) => {                           // then func is to execute
+    console.log(message,", it is done.")        // print yes if done
+}).catch((message) => {                         // catch func is to catch errors
+    console.log(message,", it is not done.")    // print no if not done
+})
